@@ -4,11 +4,10 @@
     require_once("../../controller/createAccountController.php");
 
     $client = new DtoClient($_POST['idNewUser'],$_POST['nameNewUser'],$_POST['locationNewUser'],$_POST['detailsLocationNewUser']
-                        ,$_POST['price']);
-    $alcoholicDrinkController = new AlcoholicDrinkController();
-    $alcoholicDrinkController->save($alcoholicDrink);
-    
-    
+                        ,$_POST['userNameNewUser'], $_POST['typeIdNewUser']);
 
+    $user = new DtoUser($_POST['userNameNewUser'],$_POST['passwordNewUser'],$_POST['emailAddressNewUser'],$_POST['cellPhoneNewUser']);                        
+    $createAccountController = new CreateAccountController();
+    $createAccountController->saveUserClient($user,$client);
 
 ?>
