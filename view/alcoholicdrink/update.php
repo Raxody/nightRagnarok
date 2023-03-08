@@ -4,37 +4,62 @@
     integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
 </script>
 
-<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Modal 1</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        Show a second modal and hide this one with the button below.
-      </div>
-      <div class="modal-footer">
-        <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Open second modal</button>
-      </div>
-    </div>
-  </div>
-</div>
+<!-- Botón que abre el modal -->
+<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="tittleAddAlcoholicDrink"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="tittleAddAlcoholicDrink">Agrega un nuevo licor</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="name" class="col-form-label">Nombre: *</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="type" class="col-form-label">Tipo de licor: *</label>
+                        <select class="form-select" id="type" name="type" required>
+                            <option value="Vino">Vino</option>
+                            <option value="Ron">Ron</option>
+                            <option value="Whisky">Whisky</option>
+                            <option value="Aguardiente">Aguardiente</option>
+                            <option value="Tequila">Tequila</option>
+                            <option value="Cerveza">Cerveza</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="percentage" class="col-form-label">Porcentaje de alcohol: *</label>
+                        <input type="number" min="1" step="0.1" id="percentage" name="percentage"
+                            class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="amount" class="col-form-label">Cantidad: *</label>
+                        <input type="number" id="amount" min="1" step="1" name="amount" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="price" class="col-form-label">Precio: *</label>
+                        <input type="number" min="2000" step="50" id="price" name="price" class="form-control" required>
+                    </div>
 
-<div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Modal 2</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        Hide this modal and show the first with the button below.
-      </div>
-      <div class="modal-footer">
-        <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Back to first</button>
-      </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary">Guardar</button>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
-<button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Open first modal</button>
+
+
+
+
+
+
+
+<script>
+window.addEventListener('load', function() {
+  const myModal = new bootstrap.Modal(document.getElementById('myModal'));
+  myModal.show();
+});
+</script>
